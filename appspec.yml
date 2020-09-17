@@ -5,7 +5,7 @@ files:
     destination: /opt/docker/
 hooks:
   AfterInstall:
-    - location: install_dependencies
+    - location: scripts/install_dependencies
       timeout: 300
       runas: root
 
