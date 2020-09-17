@@ -4,7 +4,7 @@ files:
   - source: /webapp/target/webapp.war
     destination: /opt/docker/
 hooks:
-  ApplicationStart:
+  AfterInstall:
     - location: install_dependencies
       timeout: 300
       runas: root
