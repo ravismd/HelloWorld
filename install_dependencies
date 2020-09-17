@@ -1,4 +1,4 @@
 #!/bin/bash
-docker build -t simple-devops-image ./Dockerfile
+docker build -t simple-devops-image .
 docker run -d --name simple-devops-container -p 8080:8080 simple-devops-image
 
