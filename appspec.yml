@@ -3,6 +3,8 @@ os: linux
 files:
   - source: /webapp/target/webapp.war
     destination: /opt/docker/
+  - source: Dockerfile
+    destination: /opt/docker/
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies
