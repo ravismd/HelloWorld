@@ -3,8 +3,8 @@ cd /opt/docker
 if [ -e webapp.war  ]; then rm webapp.war; fi
 if [ -e Dockerfile  ]; then rm Dockerfile; fi
 
-#docker ps -q --filter "name=simple-devops-container" | grep -q . && docker stop simple-devops-container || docker rm -fv simple-devops-container
-docker ps -q --filter "name=simple-devops-container" | grep -q . && docker rm -fv simple-devops-container
+docker ps -q --filter "name=simple-devops-container" | grep -q . && docker stop simple-devops-container || docker rm -fv simple-devops-container
+#docker ps -q --filter "name=simple-devops-container" | grep -q . && docker rm -fv simple-devops-container
 
 if [[  `docker images -q` ]]; then
     docker rmi $(docker images -q)
