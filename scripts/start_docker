@@ -1,0 +1,10 @@
+#!/bin/bash
+#service docker start
+#Start the Docker if the service is not started yet if started do nothing
+if [[ `pgrep dockerd` ]]
+then
+        echo "Docker is already running"
+else
+        service docker start
+fi
+
