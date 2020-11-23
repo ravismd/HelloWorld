@@ -1,16 +1,13 @@
-pipeline {
-    agent {
-        docker {
-            image 'tomcat:8'
-            
-        }
-    }
-    stages {
+node {
+          stage('Checkout'){
+         git 'https://github.com/ravismd/HelloWorld.git'
+       
+      }
+    
         stage('Build') {
             steps {
                 sh 'mvn clean install package'
-                sh 'cp target/webapp.war /usr/local/tomcat/webapps'
+                sh 'docker build -t tomcatserver .'
             }
         }
     }
-}
