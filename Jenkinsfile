@@ -7,13 +7,7 @@ node {
     
     stage('Build'){
         sh 'mvn clean install package'
-    }
-    
-    stage('Deploy') {     
-            sshagent(['ansible']) {
-               sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ansadmin@172.31.8.168:/home/ansadmin'
-              
-          }
+        sh 'cp  webapp/target/webapp.war /tmp
     }
 
 
