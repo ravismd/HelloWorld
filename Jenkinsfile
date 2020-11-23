@@ -5,9 +5,9 @@ node {
       }
     
         stage('Build') {
-            steps {
+            
                 sh 'mvn clean install package'
                 sh 'docker build -t tomcatserver .'
-            }
+            
         }
     }
