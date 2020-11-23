@@ -9,13 +9,21 @@ node {
         sh 'mvn clean install package'
     }
      
-      stage('Deploy'){
+      /*stage('Deploy'){
         sh 'cp  webapp/target/webapp.war /tmp'
        
-    }
-      stage('Test'){
+    }***/
+     /** stage('Test'){
         sh 'docker build -t tomcatwebapp:8 .'
         sh  'docker run -d --name tomcat -p 80:8080 tomcatwebapp:8'
+    } **/
+     
+      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+
+        def customImage = docker.build("ravismd/dockerwebappwar")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
     }
 
 
