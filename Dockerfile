@@ -5,4 +5,4 @@ From tomcat:8
 MAINTAINER "RaviSMD@gmail.com" 
 
 
-COPY /tmp/webapp.war /usr/local/tomcat/webapps
+COPY webapp/target/webapp.war /usr/local/tomcat/webapps
