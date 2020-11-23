@@ -8,7 +8,7 @@ node {
     
     stage('Deploy') {     
             sshagent(['ansible']) {
-               sh 'scp -o StrictHostKeyChecking=no target/webapp.war ansible@172.31.8.168:/opt/tomcat/webapps'
+               sh 'scp -o StrictHostKeyChecking=no target/webapp.war ansible@172.31.8.168:/home/ansadmin'
               
           }
     }
