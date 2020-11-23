@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean install package'
-                sh 'cp target/webapp.war /usr/local/tomcat/webapps 
+                sh 'cp target/webapp.war /usr/local/tomcat/webapps'
             }
         }
     }
