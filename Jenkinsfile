@@ -3,11 +3,11 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                docker { image 'maven:3-alpine' }
+                docker { image 'tomcat:8' }
             }
             steps {
                 sh 'mvn clean install package'
-                sh 'cp target/webapp.war 
+                sh 'cp target/webapp.war /usr/local/tomcat/webapps/'
             }
         }
      
