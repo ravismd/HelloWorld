@@ -1,23 +1,16 @@
 pipeline {
-    agent none
+    agent {
+        docker {
+            image 'tomcat:8'
+            
+        }
+    }
     stages {
-        stage('Back-end') {
-           
+        stage('Build') {
             steps {
                 sh 'mvn clean install package'
-               
+                sh 'cp target/webapp.war /usr/local/tomcat/webapps 
             }
         }
-        stage('Front-end') {
-            agent {
-                docker { image 'tomcat:8' }
-            }
-            steps {
-                
-                sh 'cp target/webapp.war /usr/local/tomcat/webapps/'
-            }
-        }
-     
-        
     }
 }
