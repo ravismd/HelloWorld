@@ -11,6 +11,7 @@ pipeline{
               stage('maven build'){
                   steps{
                       script{
+			      		currentBuild.displayName = "Test-SharedLibrary-Build"
 		    	                sh "mvn clean install"
                       	  }
                	     }  
