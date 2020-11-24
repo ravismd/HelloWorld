@@ -20,6 +20,7 @@ pipeline{
                     steps {
 			    script{
 			    currentBuild.description = "Build is success but manually tweeted for shared library--sorry for this"
+				    echo 'currentBuild.description'
 			    }
                         filterLogs ('Fetching', 1)
                     }
