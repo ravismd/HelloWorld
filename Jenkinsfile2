@@ -20,7 +20,7 @@ pipeline{
                     steps {
 			    script{
 			    currentBuild.description = "Build is success but manually tweeted for shared library--sorry for this"
-				   currentBuild.keepLog = "Build is success but manually tweeted for shared library--sorry for this"
+				   currentBuild.displayName = "Test-SharedLibrary-Build"
 			    }
                         filterLogs ('Fetching', 1)
                     }
