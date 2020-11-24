@@ -18,6 +18,7 @@ pipeline{
                  
                  stage ('Check logs') {
                     steps {
+			    currentBuild.description = "Build is success but manually tweeted for shared library--sorry for this"
                         filterLogs ('Fetching', 1)
                     }
                 }
