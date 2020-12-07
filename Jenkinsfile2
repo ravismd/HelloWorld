@@ -22,7 +22,7 @@ pipeline{
                       script{
 			      		currentBuild.displayName = "Test-SharedLibrary-Build"
 		    	                sh "mvn clean install"
-			      gv.buildApp()
+			      script.buildApp()
                       	  }
                	     }  
                  }	
