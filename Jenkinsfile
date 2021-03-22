@@ -20,7 +20,7 @@ node {
      
       docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
-        def customImage = docker.build("dockerwebappwar:8")
+        def customImage = docker.build("dockerwebappwar")
 
         /* Push the container to the custom Registry */ 
         customImage.push() 
