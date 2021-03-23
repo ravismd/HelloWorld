@@ -13,17 +13,17 @@ node {
         sh 'cp  webapp/target/webapp.war /tmp'
        
     }***/
-     /** stage('Test'){
+     stage('Test'){
         sh 'docker build -t tomcatwebapp:8 .'
         sh  'docker run -d --name tomcat -p 80:8080 tomcatwebapp:8'
-    } **/
+    } 
      
-      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+      /** docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
         def customImage = docker.build("dockerwebapp")
 
-         /** Push the container to the custom Registry **/
+         /** Push the container to the custom Registry 
         customImage.push() 
-    } 
+    }  **/
      
 }
