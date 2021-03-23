@@ -26,7 +26,7 @@ node {
         customImage.push() 
     } **/
      
-def customImage = docker.build("tomcatwebapp") {
- customImage.push() }
+def customImage = docker.build("tomcatwebapp") 
+ customImage.push() 
 
 }
