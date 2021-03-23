@@ -22,7 +22,7 @@ node {
 
         def customImage = docker.build("dockerapp")
 
-        /* Push the container to the custom Registry */ 
+         Push the container to the custom Registry 
         customImage.push() 
     } **/
      
