@@ -29,5 +29,4 @@ node {
 def customImage = docker.build("tomcatwebapp") {
  customImage.push() }
 
-
 }
