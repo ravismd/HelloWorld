@@ -18,13 +18,16 @@ node {
         sh  'docker run -d --name tomcat -p 80:8080 tomcatwebapp:8'
     } **/
      
-      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+      /*** docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
         def customImage = docker.build("dockerapp")
 
         /* Push the container to the custom Registry */ 
         customImage.push() 
-    }
+    } **/
+     
+{    def customImage = docker.build("tomcatwebapp")
+ customImage.push() }
 
 
 }
